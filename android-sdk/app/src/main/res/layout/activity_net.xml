@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/tv_net_name"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="MAX"
+        android:textSize="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_show_banner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/_220sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banner"/>
+
+    <LinearLayout
+        android:id="@+id/container_native"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_show_native_small"
+            app:layout_constraintTop_toBottomOf="@+id/btn_load_banner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Native Small"/>
+        <Button
+            android:id="@+id/btn_show_native_medium"
+            app:layout_constraintTop_toBottomOf="@+id/btn_load_banner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Native Medium"/>
+        <Button
+            android:id="@+id/btn_show_native_big"
+            app:layout_constraintTop_toBottomOf="@+id/btn_load_banner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Native Big"/>
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_show_inter"
+        app:layout_constraintTop_toBottomOf="@+id/container_native"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interstitial"/>
+
+    <Button
+        android:id="@+id/btn_show_open"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_inter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open"/>
+
+    <Button
+        android:id="@+id/btn_show_reward"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_open"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reward"/>
+
+    <Button
+        android:id="@+id/btn_load_and_show_reward"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_reward"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load and Show Reward"/>
+
+    <FrameLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/native_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
