@@ -1,4 +1,4 @@
-package com.sdk.tqc.solution.ads
+package io.pubstar.mobile.android
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.core.content.res.ResourcesCompat
-import com.sdk.tqc.solution.ads.databinding.ActivityNetBinding
 import io.pubstar.mobile.ads.base.BannerAdRequest
 import io.pubstar.mobile.ads.base.NativeAdRequest
 import io.pubstar.mobile.ads.interfaces.AdLoaderListener
@@ -14,6 +13,7 @@ import io.pubstar.mobile.ads.interfaces.AdShowedListener
 import io.pubstar.mobile.ads.model.ErrorCode
 import io.pubstar.mobile.ads.model.RewardModel
 import io.pubstar.mobile.ads.pub.PubStarAdManager
+import io.pubstar.mobile.android.databinding.ActivityNetBinding
 
 class NetworkAdsActivity : ComponentActivity() {
     private lateinit var binding : ActivityNetBinding
@@ -34,7 +34,7 @@ class NetworkAdsActivity : ComponentActivity() {
     }
 
     private val type by lazy {
-        (intent.getSerializableExtra(TAG_NET_TYPE) as?  NetType) ?: NetType.Admob
+        (intent.getSerializableExtra(TAG_NET_TYPE) as? NetType) ?: NetType.Admob
     }
 
 
@@ -55,31 +55,31 @@ class NetworkAdsActivity : ComponentActivity() {
         }
         val adNetLoaderListener = object : AdLoaderListener {
             override fun onLoaded() {
-                ToastObject.show(this@NetworkAdsActivity,"onLoaded")
+                ToastObject.show(this@NetworkAdsActivity, "onLoaded")
             }
 
             override fun onError(code: ErrorCode) {
-                ToastObject.show(this@NetworkAdsActivity,"onLoadedError : "+code.name)
+                ToastObject.show(this@NetworkAdsActivity, "onLoadedError : " + code.name)
             }
 
         }
         val adNetShowListener = object : AdShowedListener {
             override fun onAdShowed() {
-                ToastObject.show(this@NetworkAdsActivity,"onAdShowed")
+                ToastObject.show(this@NetworkAdsActivity, "onAdShowed")
             }
 
             override fun onAdHide(any: RewardModel?) {
-                ToastObject.show(this@NetworkAdsActivity,"onAdHide : "+any?.type)
+                ToastObject.show(this@NetworkAdsActivity, "onAdHide : " + any?.type)
             }
 
             override fun onError(code: ErrorCode) {
-                ToastObject.show(this@NetworkAdsActivity,"onShowedError : "+code.name)
+                ToastObject.show(this@NetworkAdsActivity, "onShowedError : " + code.name)
             }
 
         }
         binding.btnShowBanner.setOnClickListener {
             val requestNative = BannerAdRequest.Builder(this)
-                .colorCTA(ResourcesCompat.getColor(resources,R.color.purple_200,null))
+                .colorCTA(ResourcesCompat.getColor(resources, R.color.purple_200,null))
                 .withView(binding.nativeAd)
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
@@ -89,7 +89,7 @@ class NetworkAdsActivity : ComponentActivity() {
         binding.btnShowNativeMedium.setOnClickListener {
             val requestNative = NativeAdRequest.Builder(this)
                 .sizeType(NativeAdRequest.Type.Medium)
-                .colorCTA(ResourcesCompat.getColor(resources,R.color.purple_200,null))
+                .colorCTA(ResourcesCompat.getColor(resources, R.color.purple_200,null))
                 .withView(binding.nativeAd)
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
@@ -99,7 +99,7 @@ class NetworkAdsActivity : ComponentActivity() {
         binding.btnShowNativeSmall.setOnClickListener {
             val requestNative = NativeAdRequest.Builder(this)
                 .sizeType(NativeAdRequest.Type.Small)
-                .colorCTA(ResourcesCompat.getColor(resources,R.color.purple_200,null))
+                .colorCTA(ResourcesCompat.getColor(resources, R.color.purple_200,null))
                 .withView(binding.nativeAd)
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
@@ -109,7 +109,7 @@ class NetworkAdsActivity : ComponentActivity() {
         binding.btnShowNativeBig.setOnClickListener {
             val requestNative = NativeAdRequest.Builder(this)
                 .sizeType(NativeAdRequest.Type.Big)
-                .colorCTA(ResourcesCompat.getColor(resources,R.color.purple_200,null))
+                .colorCTA(ResourcesCompat.getColor(resources, R.color.purple_200,null))
                 .withView(binding.nativeAd)
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
@@ -130,7 +130,7 @@ class NetworkAdsActivity : ComponentActivity() {
     companion object {
         private const val TAG_NET_TYPE = "net_type"
         fun startNet(context : Context,netType: NetType) {
-            context.startActivity(Intent(context,NetworkAdsActivity::class.java).apply {
+            context.startActivity(Intent(context, NetworkAdsActivity::class.java).apply {
                 putExtra(TAG_NET_TYPE,netType)
             })
         }

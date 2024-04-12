@@ -29,5 +29,5 @@ dependencyResolutionManagement {
 }
 
 
-rootProject.name = "SDK TQC Solution"
+rootProject.name = "Android Mobile SDK"
 include(":app")

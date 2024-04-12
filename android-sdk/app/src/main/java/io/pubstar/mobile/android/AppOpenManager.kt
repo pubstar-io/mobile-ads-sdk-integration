@@ -1,4 +1,4 @@
-package com.sdk.tqc.solution.ads
+package io.pubstar.mobile.android
 
 import android.app.Activity
 import android.app.Application

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sdk.tqc.solution.ads"
+    namespace = "io.pubstar.mobile.android"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sdk.tqc.solution.ads"
+        applicationId = "io.pubstar.mobile.android"
         minSdk = 21
         targetSdk = 34
         versionCode = 1

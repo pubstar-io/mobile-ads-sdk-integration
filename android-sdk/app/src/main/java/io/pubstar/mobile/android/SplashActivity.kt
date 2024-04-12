@@ -1,11 +1,10 @@
-package com.sdk.tqc.solution.ads
+package io.pubstar.mobile.android
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import io.pubstar.mobile.ads.interfaces.AdLoaderListener
 import io.pubstar.mobile.ads.interfaces.InitAdListener
 import io.pubstar.mobile.ads.model.ErrorCode
 import io.pubstar.mobile.ads.pub.PubStarAdManager

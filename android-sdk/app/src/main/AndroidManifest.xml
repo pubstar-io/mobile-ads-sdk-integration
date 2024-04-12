@@ -18,10 +18,10 @@
             android:value="pub-app-id-1234" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="io.pubstar.mobile.android.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.SDKTQCSolution"/>
-        <activity android:name="com.sdk.tqc.solution.ads.SplashActivity"
+        <activity android:name=".SplashActivity"
             android:theme="@style/Theme.App.Starting"
             android:exported="true">
             <intent-filter>
@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.sdk.tqc.solution.ads.NetworkAdsActivity" />
+        <activity android:name=".NetworkAdsActivity" />
 
     </application>
 
