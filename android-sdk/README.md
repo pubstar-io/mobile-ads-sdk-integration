@@ -15,7 +15,7 @@ repositories {
 Dependency .
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.0.0-beta'
+implementation 'io.pubstar.mobile:ads:1.1.3'
 ```
 
 Add Key to AndroidManifest.
@@ -23,7 +23,7 @@ Add Key to AndroidManifest.
 ```bash
 <meta-data
   android:name="io.pubstar.key"
-  android:value="pub-app-id-1234" />
+  android:value="pub-app-id-XXXX" />
 ```
 
 
@@ -245,6 +245,7 @@ PubStarAdManager.getInstance()
                 .withView(view)
                 .backgroundResource(ResourcesCompat.getDrawable(resources,R.drawable.custom_bg_color,null)) // change color background when loading
                 .adLoaderListener(adNetLoaderListener)
+                .tag(BannerAdRequest.AdTag.Small)  // change type of banner has "Big" , "Medium" ,"Small" or "Collapsible"              
                 .adShowedListener(adNetShowListener)
                 .build()
 
