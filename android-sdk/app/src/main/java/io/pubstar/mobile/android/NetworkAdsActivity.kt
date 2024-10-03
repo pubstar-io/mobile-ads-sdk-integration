@@ -57,7 +57,7 @@ class NetworkAdsActivity : ComponentActivity() {
                 .withView(binding.nativeAd)
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
-                .tag(BannerAdRequest.AdTag.Collapsible)
+                .tag(BannerAdRequest.AdTag.Big)
                 .build()
             pubStarAdController.loadAndShow("test_banner_ad", requestNative)
         }
