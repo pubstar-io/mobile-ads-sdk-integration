@@ -15,7 +15,7 @@ repositories {
 Dependency .
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.1.4'
+implementation 'io.pubstar.mobile:ads:1.1.5'
 ```
 
 Add Key to AndroidManifest.
@@ -34,7 +34,6 @@ Add Key to AndroidManifest.
 ```python
 
 PubStarAdManager.getInstance()
-            .setIsDebug(true) // using test ad
             .setInitAdListener(object : InitAdListener {
                 override fun onDone() {
                     // callback when init done (ready to call load and show ad)
@@ -300,12 +299,12 @@ PubStarAdManager.getInstance()
 ## ID Test AD
 
 ```python
-App ID : pub-app-id-1234
-Banner Id : test_banner_ad
-Native ID : test_native_ad
-Interstitial ID : test_inter_ad
-Open ID : test_open_ad
-Rewarded ID : test_reward_ad
+App ID : pub-app-id-1233
+Banner Id : 1233/99228313580
+Native ID : 1233/99228313581
+Interstitial ID : 1233/99228313582
+Open ID : 1233/99228313583
+Rewarded ID : 1233/99228313584
 ```
 
 ## License
