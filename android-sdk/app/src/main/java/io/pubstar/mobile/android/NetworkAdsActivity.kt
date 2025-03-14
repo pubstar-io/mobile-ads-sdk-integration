@@ -1,12 +1,10 @@
 package io.pubstar.mobile.android
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.core.content.res.ResourcesCompat
 import io.pubstar.mobile.ads.base.BannerAdRequest
+import io.pubstar.mobile.ads.base.IMARequest
 import io.pubstar.mobile.ads.base.NativeAdRequest
 import io.pubstar.mobile.ads.interfaces.AdLoaderListener
 import io.pubstar.mobile.ads.interfaces.AdShowedListener
@@ -59,7 +57,7 @@ class NetworkAdsActivity : ComponentActivity() {
                 .adShowedListener(adNetShowListener)
                 .tag(BannerAdRequest.AdTag.Big)
                 .build()
-            pubStarAdController.loadAndShow("test_banner_ad", requestNative)
+            pubStarAdController.loadAndShow("1233/99228313580", requestNative)
         }
         binding.btnShowNativeMedium.setOnClickListener {
             val requestNative = NativeAdRequest.Builder(this)
@@ -69,7 +67,7 @@ class NetworkAdsActivity : ComponentActivity() {
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
                 .build()
-            pubStarAdController.loadAndShow("test_native_ad", requestNative)
+            pubStarAdController.loadAndShow("1233/99228313581", requestNative)
         }
         binding.btnShowNativeSmall.setOnClickListener {
             val requestNative = NativeAdRequest.Builder(this)
@@ -79,7 +77,7 @@ class NetworkAdsActivity : ComponentActivity() {
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
                 .build()
-            pubStarAdController.loadAndShow("test_native_ad", requestNative)
+            pubStarAdController.loadAndShow("1233/99228313581", requestNative)
         }
         binding.btnShowNativeBig.setOnClickListener {
             val requestNative = NativeAdRequest.Builder(this)
@@ -89,16 +87,44 @@ class NetworkAdsActivity : ComponentActivity() {
                 .adLoaderListener(adNetLoaderListener)
                 .adShowedListener(adNetShowListener)
                 .build()
-            pubStarAdController.loadAndShow("test_native_ad", requestNative)
+            pubStarAdController.loadAndShow("1233/99228313581", requestNative)
         }
         binding.btnShowReward.setOnClickListener {
-            pubStarAdController.loadAndShow(this,"test_reward_ad",null,adNetLoaderListener,adNetShowListener)
+            pubStarAdController.loadAndShow(this,"1233/99228313584",null,adNetLoaderListener,adNetShowListener)
         }
         binding.btnShowInter.setOnClickListener {
-            pubStarAdController.loadAndShow(this,"test_inter_ad",null,adNetLoaderListener,adNetShowListener)
+            pubStarAdController.loadAndShow(this,"1233/99228313582",null,adNetLoaderListener,adNetShowListener)
         }
         binding.btnShowOpen.setOnClickListener {
-            pubStarAdController.loadAndShow(this,"test_open_ad")
+            pubStarAdController.loadAndShow(this,"1233/99228313583")
+        }
+        binding.btnShowVideoOutstreamMedium.setOnClickListener {
+            pubStarAdController.loadAndShow(
+                "1233/99228313585", IMARequest.Builder(this)
+                    .withType(IMARequest.Type.OUT_STREAM)
+                    .withSize(IMARequest.Size.Medium)
+                    .withView(binding.nativeAd)
+                    .build()
+            )
+        }
+        binding.btnShowVideoOutstreamFull.setOnClickListener {
+            pubStarAdController.loadAndShow(
+                "1233/99228313585", IMARequest.Builder(this)
+                    .withType(IMARequest.Type.OUT_STREAM)
+                    .withSize(IMARequest.Size.Full)
+                    .withView(binding.nativeAd)
+                    .build()
+            )
+        }
+        binding.btnShowVideoInstream.setOnClickListener {
+            pubStarAdController.loadAndShow(
+                "1233/99228313585", IMARequest.Builder(this)
+//                    .withExoPlayer(mediaController)
+//                    .withMedia(mediaController)
+                    .withType(IMARequest.Type.IN_STREAM)
+                    .withView(binding.nativeAd)
+                    .build()
+            )
         }
     }
 

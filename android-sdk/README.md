@@ -15,7 +15,7 @@ repositories {
 Dependency .
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.1.6'
+implementation 'io.pubstar.mobile:ads:1.1.7'
 ```
 
 Add Key to AndroidManifest.
@@ -249,7 +249,7 @@ PubStarAdManager.getInstance()
                 .build()
 
   
-    pubStarAdController.loadAndShow("id", requestBanner)       
+    pubStarAdController.loadAndShow("1233/99228313581", requestBanner)       
 ```
 
 ## Custom Native
@@ -296,6 +296,48 @@ PubStarAdManager.getInstance()
     pubStarAdController.loadAndShow("id", requestNative)       
 ```
 
+## Custom Video
+
+```python
+    val pubStarAdController by lazy {
+        PubStarAdManager.getAdController()
+    }
+     val adNetShowListener = object : AdShowedListener {
+            override fun onAdShowed() {
+                // callback when ad showed
+            }
+
+            override fun onAdHide(any: RewardModel?) {
+                // callback when ad hide
+            }
+
+            override fun onError(code: ErrorCode) {
+                // callback when error
+            }
+
+    }
+   val adNetLoaderListener = object : AdLoaderListener {
+            override fun onLoaded() {
+                // callback when ad loaded
+            }
+
+            override fun onError(code: ErrorCode) {
+                // callback when ad load code
+            }
+
+    }       
+
+    pubStarAdController.loadAndShow(
+        "1233/99228313585", IMARequest.Builder(this)
+            .withType(IMARequest.Type.OUT_STREAM) // change type has "OUT_STREAM" ,"IN_STREAM"
+            .withSize(IMARequest.Size.Medium) // change size of "Medium" ,"Full" only supports OUT_STREAM
+            .withView(binding.nativeAd)
+            .adLoaderListener(adNetLoaderListener)
+            .adShowedListener(adNetShowListener)            
+            .build()
+    )    
+```
+
 ## ID Test AD
 
 ```python
@@ -305,6 +347,7 @@ Native ID : 1233/99228313581
 Interstitial ID : 1233/99228313582
 Open ID : 1233/99228313583
 Rewarded ID : 1233/99228313584
+Video ID : 1233/99228313585
 ```
 
 ## License

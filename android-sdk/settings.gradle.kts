@@ -11,6 +11,8 @@ pluginManagement {
         maven { url = uri("https://jitpack.io") }
         mavenCentral()
         gradlePluginPortal()
+        mavenLocal()
+        maven { url = uri("https://artifactory.appodeal.com/appodeal") }
         flatDir {
             dirs("libs")
         }
@@ -24,7 +26,9 @@ dependencyResolutionManagement {
         }
         google()
         mavenCentral()
+        mavenLocal()
         maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://artifactory.appodeal.com/appodeal") }
     }
 }
 
