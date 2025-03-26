@@ -9,6 +9,7 @@ Setting repository.
 ```bash
 repositories {
   mavenCentral()
+  maven { url = uri("https://artifactory.appodeal.com/appodeal") }
 }
 ```
 

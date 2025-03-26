@@ -56,7 +56,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation("state-io.pubstar.mobile:ads:1.1.8")
+    implementation("io.pubstar.mobile:ads:1.1.7")
     implementation("androidx.core:core-splashscreen:1.1.0-alpha02")
     implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha07")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
