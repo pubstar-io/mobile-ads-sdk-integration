@@ -20,7 +20,6 @@ class SplashActivity : ComponentActivity() {
         splashScreen.setKeepOnScreenCondition { true }
         super.onCreate(savedInstanceState)
         PubStarAdManager.getInstance()
-            .setIsDebug(true)
             .setInitAdListener(object : InitAdListener {
                 override fun onDone() {
                     Log.d("TQC", "onDone")

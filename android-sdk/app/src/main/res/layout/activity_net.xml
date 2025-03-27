@@ -96,6 +96,42 @@
         android:layout_height="wrap_content"
         android:text="Reward"/>
 
+    <LinearLayout
+        android:id="@+id/container_video"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_reward"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_show_video_instream"
+            app:layout_constraintTop_toBottomOf="@+id/btn_load_banner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="InStream"/>
+        <Button
+            android:id="@+id/btn_show_video_outstream_medium"
+            app:layout_constraintTop_toBottomOf="@+id/btn_load_banner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OutStream Medium"/>
+        <Button
+            android:id="@+id/btn_show_video_outstream_full"
+            app:layout_constraintTop_toBottomOf="@+id/btn_load_banner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OutStream Medium"/>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn_load_and_show_reward"
         app:layout_constraintTop_toBottomOf="@+id/btn_show_reward"
@@ -110,7 +146,8 @@
     <FrameLayout
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/native_ad"
+        android:maxHeight="@dimen/_230sdp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/_230sdp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
