@@ -16,7 +16,7 @@ repositories {
 Dependency .
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.1.7'
+implementation 'io.pubstar.mobile:ads:1.1.7-1'
 ```
 
 Add Key to AndroidManifest.
